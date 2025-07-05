@@ -3,8 +3,8 @@
 projectName=$1
 
 if [ -z "$projectName" ]; then
-  echo "❌ Project name missing!"
-  exit 1
+  echo "⚠️ Project name missing, using default: my_flutter_app"
+  projectName="my_flutter_app"
 fi
 
 flutter create $projectName
@@ -23,5 +23,4 @@ echo "class HomeView {}" > view/home_view.dart
 
 echo "✅ Flutter project '$projectName' created with full structure."
 
-echo "dependencies:\n  get:" >> pubspec.yaml
-
+echo -e "dependencies:\n  get:" >> pubspec.yaml
